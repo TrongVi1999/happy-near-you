@@ -26,12 +26,47 @@ body {
 
 /* Text animation */
 .title {
-  font-size: 32px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
   letter-spacing: 2px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   opacity: 0;
-  animation: fadeUp 1.2s ease forwards;
+
+  background: linear-gradient(
+    110deg,
+    #e8b6c9 25%,
+    #f7dbe6 37%,
+    #e8b6c9 63%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    fadeUp 1.2s ease forwards,
+    shimmer 4s linear infinite,
+    wave 3s ease-in-out infinite;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
 
 .message {
   font-size: 14px;
