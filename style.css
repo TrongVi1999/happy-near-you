@@ -1,169 +1,47 @@
-* {
-  box-sizing: border-box;
-}
-
+html,
 body {
   margin: 0;
-  height: 100vh;
-  background: #ffffff;
-  overflow: hidden;
-  font-family: 'Playfair Display', serif;
-  color: #222;
-}
-
-/* ===== NỀN LINE CONG TỰ NHIÊN ===== */
-.bg-curves {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bg-curves svg {
+  padding: 0;
   width: 100%;
   height: 100%;
+  background: #000;
 }
 
-.bg-curves path {
-  fill: none;
-  stroke: rgba(198, 160, 74, 0.18); /* vàng kim mờ */
-  stroke-width: 1.2;
-}
-
-/* Layout */
-.container {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* ===== CHỮ NGHỆ THUẬT ===== */
-.headline {
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.happy {
-  font-family: 'Great Vibes', cursive;
-  font-size: 34px;
-  display: block;
-  margin-bottom: -10px;
-  opacity: 0;
-  animation: fadeUp 1.2s ease forwards;
-}
-
-.year {
-  font-size: 96px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  display: block;
-
-  background: linear-gradient(
-    120deg,
-    #8b0000,
-    #b11226,
-    #6d0022
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  opacity: 0;
-  animation:
-    fadeUp 1.2s ease forwards,
-    shimmer 5s linear infinite;
-  animation-delay: 0.4s;
-}
-
-.message {
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 280px;
-  opacity: 0;
-  animation: fadeUp 1.2s ease forwards;
-  animation-delay: 1s;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes shimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-
-/* ===== HOA ĐÀO ===== */
-.petals {
+#fixed-bg {
   position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
 }
 
-.petals span {
+canvas {
   position: absolute;
-  top: -15%;
-  width: 10px;
-  height: 10px;
-  background: #f4a6b8;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(45deg);
-  opacity: 0.9;
-  animation: fall linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
 }
 
-.petals span:nth-child(odd) {
-  width: 12px;
-  height: 12px;
-  opacity: 0.8;
+#c {
+  width: auto;
+  height: 100%;
 }
 
-/* phân bố */
-.petals span:nth-child(1)  { left: 4%;  animation-duration: 9s; }
-.petals span:nth-child(2)  { left: 8%;  animation-duration: 12s; animation-delay: 1s; }
-.petals span:nth-child(3)  { left: 12%; animation-duration: 10s; }
-.petals span:nth-child(4)  { left: 18%; animation-duration: 13s; animation-delay: 2s; }
-.petals span:nth-child(5)  { left: 24%; animation-duration: 9s; }
-.petals span:nth-child(6)  { left: 30%; animation-duration: 14s; animation-delay: 3s; }
-.petals span:nth-child(7)  { left: 36%; animation-duration: 10s; }
-.petals span:nth-child(8)  { left: 42%; animation-duration: 12s; animation-delay: 1s; }
-.petals span:nth-child(9)  { left: 48%; animation-duration: 9s; }
-.petals span:nth-child(10) { left: 54%; animation-duration: 13s; animation-delay: 2s; }
-.petals span:nth-child(11) { left: 60%; animation-duration: 10s; }
-.petals span:nth-child(12) { left: 66%; animation-duration: 14s; animation-delay: 1s; }
-.petals span:nth-child(13) { left: 72%; animation-duration: 9s; }
-.petals span:nth-child(14) { left: 78%; animation-duration: 12s; animation-delay: 3s; }
-.petals span:nth-child(15) { left: 84%; animation-duration: 10s; }
-.petals span:nth-child(16) { left: 90%; animation-duration: 14s; animation-delay: 2s; }
-.petals span:nth-child(17) { left: 6%;  animation-duration: 11s; }
-.petals span:nth-child(18) { left: 16%; animation-duration: 13s; animation-delay: 4s; }
-.petals span:nth-child(19) { left: 26%; animation-duration: 9s; }
-.petals span:nth-child(20) { left: 46%; animation-duration: 12s; animation-delay: 2s; }
-.petals span:nth-child(21) { left: 56%; animation-duration: 10s; }
-.petals span:nth-child(22) { left: 76%; animation-duration: 14s; animation-delay: 1s; }
-.petals span:nth-child(23) { left: 86%; animation-duration: 9s; }
-.petals span:nth-child(24) { left: 96%; animation-duration: 15s; animation-delay: 3s; }
+#c2 {
+  width: 100%;
+  height: auto;
+}
 
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(45deg);
+@media (max-aspect-ratio: 1) {
+  #c {
+    width: 100%;
+    height: auto;
   }
-  100% {
-    transform: translateY(130vh) rotate(420deg);
+
+  #c2 {
+    width: auto;
+    height: 100%;
   }
 }
