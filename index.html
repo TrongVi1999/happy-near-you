@@ -1,48 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy New Year 2026</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+  <title>Peach Blossom Forest</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Background line cong ngẫu nhiên -->
-  <div class="bg-curves">
-    <svg viewBox="0 0 1000 1600" preserveAspectRatio="none">
-      <path d="M-100 200 C 200 100, 400 400, 700 250 S 1100 350, 1200 150" />
-      <path d="M-100 500 C 300 650, 500 300, 800 500 S 1200 700, 1400 400" />
-      <path d="M-200 800 C 150 900, 450 700, 750 900 S 1200 1100, 1500 900" />
-      <path d="M-100 1100 C 300 1000, 600 1300, 900 1100 S 1300 1200, 1600 1000" />
-      <path d="M-200 1400 C 200 1500, 500 1350, 900 1500 S 1300 1600, 1600 1450" />
-    </svg>
+  <div id="fixed-bg">
+    <canvas id="c2"></canvas>
+    <canvas id="c"></canvas>
   </div>
 
-  <!-- Hoa đào -->
-  <div class="petals">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <!-- GSAP (BẮT BUỘC) -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 
-  <!-- Nội dung -->
-  <div class="container">
-    <div class="headline">
-      <span class="happy">Happy New Year</span>
-      <span class="year">2026</span>
-    </div>
-
-    <p class="message">
-      May your year bloom with joy,<br>
-      peace, and beautiful beginnings.
-    </p>
-  </div>
-
+  <!-- FILE JS CỦA BẠN -->
+  <script src="script.js"></script>
 </body>
 </html>
